@@ -9,17 +9,32 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            background: #f0f0f0;
         }
 
-        img {
-            max-width: 90%;
-            max-height: 90%;
+        .frame {
+            width: min(80vw, 800px);
+            aspect-ratio: 4 / 3;
+            border: 2px solid #333;
+            background: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Show entire image */
         }
     </style>
 </head>
 <body>
 
-<img id="randomImage" alt="Random Image">
+<div class="frame">
+    <img id="randomImage" alt="Random Image">
+</div>
 
 <script>
     const images = [
@@ -34,7 +49,6 @@
     ];
 
     const randomIndex = Math.floor(Math.random() * images.length);
-
     document.getElementById("randomImage").src = images[randomIndex];
 </script>
 
