@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Image</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+    </style>
+</head>
+<body>
+
+<img id="randomImage" alt="Random Image">
+
+<script>
+    const images = [
+        "images/image1.png",
+        "images/image2.jpg",
+        "images/image3.png",
+        "images/image4.jpg",
+        "images/image5.png",
+        "images/image6.jpg",
+        "images/image7.jpg",
+        "images/image8.jpg"
+    ];
+
+    const randomIndex = Math.floor(Math.random() * images.length);
+
+    document.getElementById("randomImage").src = images[randomIndex];
+</script>
+
+</body>
+</html>
